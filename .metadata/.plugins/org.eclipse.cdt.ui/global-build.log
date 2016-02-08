@@ -770,3 +770,75 @@ Invoking: GCC C++ Linker
 g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
 Finished building target: lab1_cpp
  
+21:50:58 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
+21:52:28 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+make: Nothing to be done for `all'.
+21:52:47 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+make: Nothing to be done for `all'.
+21:55:46 **** Build of configuration Debug for project a1 ****
+make all 
+Building file: ../src/a1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/a1.d" -MT"src/a1.d" -o "src/a1.o" "../src/a1.cpp"
+Finished building: ../src/a1.cpp
+ 
+Building target: a1
+Invoking: GCC C++ Linker
+g++  -o "a1"  ./src/a1.o   
+Finished building target: a1
+ 
+21:57:11 **** Incremental Build of configuration Debug for project a1 ****
+make all 
+Building file: ../src/a1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/a1.d" -MT"src/a1.d" -o "src/a1.o" "../src/a1.cpp"
+Finished building: ../src/a1.cpp
+ 
+Building target: a1
+Invoking: GCC C++ Linker
+g++  -o "a1"  ./src/a1.o   
+Finished building target: a1
+ 
+21:57:12 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+21:57:12 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+make: Nothing to be done for `all'.
+21:57:13 **** Incremental Build of configuration Debug for project a1 ****
+make all 
+make: Nothing to be done for `all'.
+21:59:32 **** Incremental Build of configuration Debug for project a1 ****
+make all 
+make: Nothing to be done for `all'.
+21:59:32 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+21:59:32 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+make: Nothing to be done for `all'.
+21:59:37 **** Incremental Build of configuration Debug for project a1 ****
+make all 
+Building file: ../src/a1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/a1.d" -MT"src/a1.d" -o "src/a1.o" "../src/a1.cpp"
+Finished building: ../src/a1.cpp
+ 
+Building target: a1
+Invoking: GCC C++ Linker
+g++  -o "a1"  ./src/a1.o   
+Finished building target: a1
+ 

@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 
 	// have to open file and save as global var
 	//fin.open(argv[1]);
-	fin.open("p1.data");
+	fin.open("input.txt");
 
 
 	cout << "**** Program Start ****" << endl;

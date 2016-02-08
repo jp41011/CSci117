@@ -1,15 +1,6 @@
-16:05:48 **** Incremental Build of configuration Debug for project lab1_cpp ****
+21:59:32 **** Incremental Build of configuration Debug for project lab1_cpp ****
 make all 
-Building file: ../src/lab1_cpp.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
-Finished building: ../src/lab1_cpp.cpp
- 
-Building target: lab1_cpp
-Invoking: GCC C++ Linker
-g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
-Finished building target: lab1_cpp
- 
+make: Nothing to be done for `all'.
 
-16:05:48 Build Finished (took 259ms)
+21:59:33 Build Finished (took 56ms)
 
