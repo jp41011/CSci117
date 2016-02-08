@@ -1,0 +1,772 @@
+18:37:41 **** Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
+18:37:44 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+make: Nothing to be done for `all'.
+15:18:48 **** Build of configuration Debug for project lab1_c ****
+make all 
+Building file: ../prog1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prog1.d" -MT"prog1.d" -o "prog1.o" "../prog1.c"
+../prog1.c: In function ‘main’:
+../prog1.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Finished building: ../prog1.c
+ 
+Building target: lab1_c
+Invoking: GCC C Linker
+gcc  -o "lab1_c"  ./prog1.o   
+Finished building target: lab1_c
+ 
+15:19:32 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+Building file: ../prog1.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"prog1.d" -MT"prog1.d" -o "prog1.o" "../prog1.c"
+Finished building: ../prog1.c
+ 
+Building target: lab1_c
+Invoking: GCC C Linker
+gcc  -o "lab1_c"  ./prog1.o   
+Finished building target: lab1_c
+ 
+15:27:15 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Exp2(int)’:
+../src/lab1_cpp.cpp:64:18: error: no match for ‘operator!=’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)
+  if( (fin.get(a) != EOF)
+                  ^
+../src/lab1_cpp.cpp:64:18: note: candidates are:
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/postypes.h:221:5: note: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::fpos<_StateT>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note: template<class _T1, class _T2> bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::pair<_T1, _T2>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:138:5: note: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:138:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::allocator<_CharT>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:143:5: note: template<class _Tp> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:143:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::allocator<_CharT>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   mismatched types ‘const _CharT*’ and ‘std::basic_istream<char>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if( (fin.get(a) != EOF)
+                     ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:64:21: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+  if( (fin.get(a) != EOF)
+                     ^
+../src/lab1_cpp.cpp:65:2: error: expected ‘)’ before ‘{’ token
+  {
+  ^
+../src/lab1_cpp.cpp:61:6: warning: unused variable ‘result’ [-Wunused-variable]
+  int result=inp;
+      ^
+../src/lab1_cpp.cpp:80:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+../src/lab1_cpp.cpp: In function ‘int Term2(int)’:
+../src/lab1_cpp.cpp:99:17: error: no match for ‘operator!=’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)
+  if( fin.get(a) != EOF)
+                 ^
+../src/lab1_cpp.cpp:99:17: note: candidates are:
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/postypes.h:221:5: note: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::fpos<_StateT>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note: template<class _T1, class _T2> bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::pair<_T1, _T2>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:138:5: note: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:138:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::allocator<_CharT>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:143:5: note: template<class _Tp> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:143:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::allocator<_CharT>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   mismatched types ‘const _CharT*’ and ‘std::basic_istream<char>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+  if( fin.get(a) != EOF)
+                    ^
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:133:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [src/lab1_cpp.o] Error 1
+15:31:11 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Term2(int)’:
+../src/lab1_cpp.cpp:99:17: error: no match for ‘operator!=’ (operand types are ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ and ‘int’)
+  if( fin.get(a) != EOF)
+                 ^
+../src/lab1_cpp.cpp:99:17: note: candidates are:
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/postypes.h:221:5: note: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::fpos<_StateT>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note: template<class _T1, class _T2> bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:227:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::pair<_T1, _T2>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:303:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:353:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:138:5: note: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:138:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::allocator<_CharT>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:143:5: note: template<class _Tp> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:143:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::allocator<_CharT>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2532:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2544:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   mismatched types ‘const _CharT*’ and ‘std::basic_istream<char>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2556:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if( fin.get(a) != EOF)
+                    ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/ostream:38,
+                 from /usr/include/c++/4.8/iostream:39,
+                 from ../src/lab1_cpp.cpp:1:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/stdio.h:74:0,
+                 from /usr/include/c++/4.8/cstdio:42,
+                 from /usr/include/c++/4.8/fstream:41,
+                 from ../src/lab1_cpp.cpp:2:
+../src/lab1_cpp.cpp:99:20: note:   ‘std::basic_istream<char>::__istream_type {aka std::basic_istream<char>}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+  if( fin.get(a) != EOF)
+                    ^
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:133:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+make: *** [src/lab1_cpp.o] Error 1
+15:33:29 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:133:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
+15:37:33 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:37:33 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:134:15: error: cast from ‘char*’ to ‘int’ loses precision [-fpermissive]
+  return int(&a);
+               ^
+../src/lab1_cpp.cpp:129:7: warning: address of local variable ‘a’ returned [-Wreturn-local-addr]
+  char a;
+       ^
+make: *** [src/lab1_cpp.o] Error 1
+15:41:53 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:41:53 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:134:15: error: cast from ‘char*’ to ‘int’ loses precision [-fpermissive]
+  return int(&a);
+               ^
+../src/lab1_cpp.cpp:129:7: warning: address of local variable ‘a’ returned [-Wreturn-local-addr]
+  char a;
+       ^
+make: *** [src/lab1_cpp.o] Error 1
+15:46:41 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:46:41 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:134:19: error: variable ‘std::stringstream ss’ has initializer but incomplete type
+  stringstream ss(a);
+                   ^
+make: *** [src/lab1_cpp.o] Error 1
+15:47:15 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:47:15 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:134:17: error: variable ‘std::stringstream ss’ has initializer but incomplete type
+  stringstream ss(&a);
+                 ^
+make: *** [src/lab1_cpp.o] Error 1
+15:47:19 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:47:19 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:134:19: error: variable ‘std::stringstream ss’ has initializer but incomplete type
+  stringstream ss(a);
+                   ^
+make: *** [src/lab1_cpp.o] Error 1
+15:56:57 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:56:57 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+../src/lab1_cpp.cpp: In function ‘int Fact()’:
+../src/lab1_cpp.cpp:133:16: error: ‘atoi’ was not declared in this scope
+  return atoi(&a); // char converted to integer
+                ^
+../src/lab1_cpp.cpp:137:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [src/lab1_cpp.o] Error 1
+15:57:50 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+15:57:50 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
+16:02:00 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+16:02:00 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
+16:04:39 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+16:04:39 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
+16:05:48 **** Incremental Build of configuration Debug for project lab1_c ****
+make all 
+make: Nothing to be done for `all'.
+16:05:48 **** Incremental Build of configuration Debug for project lab1_cpp ****
+make all 
+Building file: ../src/lab1_cpp.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/lab1_cpp.d" -MT"src/lab1_cpp.d" -o "src/lab1_cpp.o" "../src/lab1_cpp.cpp"
+Finished building: ../src/lab1_cpp.cpp
+ 
+Building target: lab1_cpp
+Invoking: GCC C++ Linker
+g++  -o "lab1_cpp"  ./src/lab1_cpp.o   
+Finished building target: lab1_cpp
+ 
