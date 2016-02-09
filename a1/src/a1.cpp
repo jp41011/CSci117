@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
+#include <math.h>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ Program description:
 */
 
 // Advanced function declaration
-int Exp(), Term(), Exp2(int), Term2(int), Fact();
+int Exp(), Term(), Exp2(int), Term2(int), Fact(), Num();
 
 //global var with file
 ifstream fin;
@@ -29,8 +30,10 @@ ifstream fin;
 int main(int argc, char* argv[])
 {
 
-	fin.open("input.txt");
-
+	fin.open("input.txt"); // file from previous lab
+	//fin.open("input1.txt");
+	//fin.open("input2.txt");
+	//fin.open("input3.txt");
 
 	cout << "**** Program Start ****" << endl;
 
@@ -66,13 +69,16 @@ int Exp2(int inp)
 		if(a =='+') // if addition
 		{
 			result = Exp2(result + Term()); // return number plus next char
-			cout << inp << " + Term() = " << result << endl;
+			cout << "\t" << inp << " + Term() = " << result << endl;
 		}
 		else if (a =='-') // if subtraction
 		{
 			result = Exp2(result - Term()); // return number minus next char
-			cout << inp << " - Term() = " << result << endl;
-		}
+			cout << "\t" << inp << " - Term() = " << result << endl;
+		}/*else if(a == ')'){
+			result = Exp2(result);
+			cout << "\t" << inp << " )" << result << endl;
+		}*/
 	}
 	return result;
 }
@@ -97,16 +103,19 @@ int Term2(int inp)
 		if(a=='*') // if multiplication
 		{
 			result = Term2(result * Fact()); // return result multiplied by next char
-			cout << inp << " * Fact() = " << result << endl;
-		}
-		else if(a=='/') // if division
+			cout << "\t" << inp << " * Fact() = " << result << endl;
+		}else if(a=='/') // if division
 		{
 			result = Term2(result / Fact()); // return result divided by next char
-			cout << inp << " / Fact() = " << result << endl;
-		}
-		else if(a == '+' || a=='-') // if addition or subtraction lower precedence
+			cout << "\t" << inp << " / Fact() = " << result << endl;
+		}else if(a == '+' || a=='-') // if addition or subtraction lower precedence or ')'
 		{
 			fin.putback(a);
+			cout << "\t" << " putback: " << a << endl;
+		}else if( a == ')'){
+				fin.putback(a);
+				cout << "\t" << "putback: " << a << endl;
+				Fact();
 		}
 	}
 	return result;
@@ -115,9 +124,38 @@ int Term2(int inp)
 // reads in one character at a time
 int Fact()
 {
+	cout << "Fact() - " << endl;;
 	char a;
-	//int result;
+	int result = Num();
+	cout << "Fact() - " << endl;
 	fin.get(a);
-	cout << "Fact(" << a << ")" << endl;
-	return atoi(&a); // char converted to integer
+	cout << "\t got: " << a << endl;
+	if( a == '^'){
+		cout << "\t result: " << result << " a: " << a << endl;
+		return pow(result, Fact());
+	}else{
+		cout << "\t putback: " << a << endl;
+		fin.putback(a);
+		cout << "\t result: " << result << endl;
+		//return Fact();
+	}
+	//cout << "\t got:" << a << endl;
+	//return atoi(&a); // char converted to integer
+	return result;
+}
+
+int Num()
+{
+	cout << "Num() - " << endl;;
+	char a;
+	fin.get(a);
+	if(a == '('){
+		cout << "\t got: (" << endl;
+		return Num(); // not really sure what to do in the case that we read in a '('
+	}else{
+		cout << "\t got: " << a << endl;
+		return atoi(&a);
+	}
+	//cout << "\t got: " << a << endl;
+	//return atoi(&a);
 }
