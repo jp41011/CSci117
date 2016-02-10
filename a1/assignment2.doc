@@ -1,0 +1,365 @@
+﻿Juan Pedraza Csci 117 – Assignment 2 2/9/16
+1. 
+Input: (2+3)*4/2-(3*(4-1))+2^3^2+1
+Output: 
+**** Program Start ****
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: (
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: +
+	 putback: +
+	 result: 2
+Term2(2)
+	 putback: +
+Exp2(2)
+Term()
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: )
+	 putback: )
+	 result: 3
+Term2(3)
+	 putback: )
+Exp2(5)
+	2 + Term() = 5
+  Fact() - 
+	 got: *
+	 putback: *
+	 result: 5
+Term2(5)
+Fact() - 
+Num() - 
+	 got: 4
+  Fact() - 
+	 got: /
+	 putback: /
+	 result: 4
+Term2(20)
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: -
+	 putback: -
+	 result: 2
+Term2(10)
+	 putback: -
+	20 / Fact() = 10
+	5 * Fact() = 10
+Exp2(10)
+Term()
+Fact() - 
+Num() - 
+	 got: (
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: *
+	 putback: *
+	 result: 3
+Term2(3)
+Fact() - 
+Num() - 
+	 got: (
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 4
+  Fact() - 
+	 got: -
+	 putback: -
+	 result: 4
+Term2(4)
+	 putback: -
+Exp2(4)
+Term()
+Fact() - 
+Num() - 
+	 got: 1
+  Fact() - 
+	 got: )
+	 putback: )
+	 result: 1
+Term2(1)
+	 putback: )
+Exp2(3)
+	4 - Term() = 3
+  Fact() - 
+	 got: )
+	 putback: )
+	 result: 3
+Term2(9)
+	 putback: )
+	3 * Fact() = 9
+Exp2(9)
+  Fact() - 
+	 got: +
+	 putback: +
+	 result: 9
+Term2(9)
+	 putback: +
+Exp2(1)
+Term()
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: ^
+	 result: 2 a: ^
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: ^
+	 result: 3 a: ^
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: +
+	 putback: +
+	 result: 2
+Term2(512)
+	 putback: +
+Exp2(513)
+Term()
+Fact() - 
+Num() - 
+	 got: 1
+  Fact() - 
+	 got: 
+
+	 putback: 
+
+	 result: 1
+Term2(1)
+Exp2(514)
+	513 + Term() = 514
+	1 + Term() = 514
+	10 - Term() = 514
+
+Result = 514
+
+2.
+Input: 2^3^2-8/(2*1)-9-(4-3)+3*4
+Output: **** Program Start ****
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: ^
+	 result: 2 a: ^
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: ^
+	 result: 3 a: ^
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: -
+	 putback: -
+	 result: 2
+Term2(512)
+	 putback: -
+Exp2(512)
+Term()
+Fact() - 
+Num() - 
+	 got: 8
+  Fact() - 
+	 got: /
+	 putback: /
+	 result: 8
+Term2(8)
+Fact() - 
+Num() - 
+	 got: (
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: *
+	 putback: *
+	 result: 2
+Term2(2)
+Fact() - 
+Num() - 
+	 got: 1
+  Fact() - 
+	 got: )
+	 putback: )
+	 result: 1
+Term2(2)
+	 putback: )
+	2 * Fact() = 2
+Exp2(2)
+  Fact() - 
+	 got: -
+	 putback: -
+	 result: 2
+Term2(4)
+	 putback: -
+	8 / Fact() = 4
+Exp2(508)
+Term()
+Fact() - 
+Num() - 
+	 got: 9
+  Fact() - 
+	 got: -
+	 putback: -
+	 result: 9
+Term2(9)
+	 putback: -
+Exp2(499)
+Term()
+Fact() - 
+Num() - 
+	 got: (
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 4
+  Fact() - 
+	 got: -
+	 putback: -
+	 result: 4
+Term2(4)
+	 putback: -
+Exp2(4)
+Term()
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: )
+	 putback: )
+	 result: 3
+Term2(3)
+	 putback: )
+Exp2(1)
+	4 - Term() = 1
+  Fact() - 
+	 got: +
+	 putback: +
+	 result: 1
+Term2(1)
+	 putback: +
+Exp2(498)
+Term()
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: *
+	 putback: *
+	 result: 3
+Term2(3)
+Fact() - 
+Num() - 
+	 got: 4
+  Fact() - 
+	 got: 
+
+	 putback: 
+
+	 result: 4
+Term2(12)
+	3 * Fact() = 12
+Exp2(510)
+	498 + Term() = 510
+	499 - Term() = 510
+	508 - Term() = 510
+	512 - Term() = 510
+
+Result = 510
+
+3.
+Input: 2^3^2+(2^3)^2
+Output: **** Program Start ****
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: ^
+	 result: 2 a: ^
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: ^
+	 result: 3 a: ^
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: +
+	 putback: +
+	 result: 2
+Term2(512)
+	 putback: +
+Exp2(512)
+Term()
+Fact() - 
+Num() - 
+	 got: (
+Exp()
+Term()
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: ^
+	 result: 2 a: ^
+Fact() - 
+Num() - 
+	 got: 3
+  Fact() - 
+	 got: )
+	 putback: )
+	 result: 3
+Term2(8)
+	 putback: )
+Exp2(8)
+  Fact() - 
+	 got: ^
+	 result: 8 a: ^
+Fact() - 
+Num() - 
+	 got: 2
+  Fact() - 
+	 got: 
+
+	 putback: 
+
+	 result: 2
+Term2(64)
+Exp2(576)
+	512 + Term() = 576
+
+Result = 576
+
