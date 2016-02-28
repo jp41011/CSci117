@@ -1,7 +1,7 @@
 /*============================================================================
  Name        : Prog3.cpp
  Author      : Juan Pedraza
- Version     : v1 - 2/23/16
+ Version     : v3 - 2/28/16
  Copyright   : Your copyright notice
  Description : CS 117 - Prog3
  	 	 	 Task: Build an interpreter for the FresnoSP16 language that was defined.
@@ -15,6 +15,7 @@
 */
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <stdlib.h>
 #include <math.h>
 #include <vector>
@@ -28,7 +29,12 @@ struct symbolNode {
 };
 
 ifstream fin; // global file
+istringstream ExpStream; //global stream to be used by exp() ... etc.
+
 vector<symbolNode> symbolTable (0); // symbolTable
+
+bool debug1 = false; // whether to show debugging statements for assignments 1 and 2
+bool debug2 = false; // whether to show debugging statements for assignments 3
 
 // Advanced function declaration
 int Exp(), Term(), Exp2(int), Term2(int), Fact(), Num();
@@ -61,7 +67,9 @@ int main() {
 	if(tempLine == "program")
 	{
 		declaration_list();
-		printSymbolTable();
+		if(debug2)
+			printSymbolTable();
+
 		statement_list();
 	}else{
 		cout << "Syntax Error: Does not start with Program" << endl;
@@ -96,15 +104,18 @@ int getSymbolIndex(string symbol)
 
 void declaration_list()
 {
-	cout << "declaration_list()" << endl;
+	if(debug2)
+		cout << "declaration_list()" << endl;
 	string tempLine = "";
 	//getline(fin, tempLine);
 	//fin >> tempLine; // separated by whitespace
 	while(fin >> tempLine) // whitespace delimiter
 	{
-		cout << "tempLine: " << tempLine << endl;
+		if(debug2)
+			cout << "tempLine: " << tempLine << endl;
 		if(tempLine == "begin"){ // no declarations
-			cout << "Got to 'begin'" << endl;
+			if(debug2)
+				cout << "Got to 'begin'" << endl;
 			return;
 		}else if(tempLine == "int"){
 			declaration("int");
@@ -120,11 +131,13 @@ void declaration(string type)
 {
 	string tempWord;
 	bool foundSemiColon = false;
-	cout << "declaration(" << type << ")" << endl;
+	if(debug2)
+		cout << "declaration(" << type << ")" << endl;
 
 	while(fin >> tempWord) //; // get next word
 	{
-		cout << "Word: " << tempWord << endl;
+		if(debug2)
+			cout << "Word: " << tempWord << endl;
 
 		char lastChar = tempWord[tempWord.length()-1]; // get last char ',' or ';'
 		if(lastChar ==  ',') // end of line
@@ -135,7 +148,8 @@ void declaration(string type)
 		tempWord = tempWord.substr(0,tempWord.length()-1); // remove the last char
 
 		//else new var to add to symbol table
-		cout << "Creating: " << type << " " << tempWord << endl;
+		if(debug2)
+			cout << "Creating: " << type << " " << tempWord << endl;
 		symbolNode tempNode;
 		tempNode.type = type;
 		tempNode.symbol = tempWord;
@@ -150,7 +164,8 @@ void declaration(string type)
 
 void statement_list()
 {
-	cout << "statement_list()" << endl;
+	if(debug2)
+		cout << "statement_list()" << endl;
 	string tempWord = "";
 	while(fin >> tempWord)
 	{
@@ -173,15 +188,6 @@ void statement(string inWord)
 
 void printFunc()
 {
-	//change to char type
-	/*
-	string tempWord = "";
-	fin >> tempWord;
-
-	tempWord = tempWord.substr(0,tempWord.length()-1); //remove the trailing ;
-	*/
-
-	//char tempChar = tempWord[0];
 	char tempChar;
 	fin >> tempChar;
 	if( ('a' <= tempChar && tempChar <= 'z') || ('A' <= tempChar && tempChar <= 'Z') )
@@ -192,36 +198,81 @@ void printFunc()
 		if(tempIndex == -1)
 		{
 			cout << "Semantic Error: " << tempChar << " does not exists." << endl;
-			return;
+			//return;
 		}else{
 			cout << symbolTable[tempIndex].value << endl;
-			return;
+			//return;
+		}
+		fin >> tempChar; // the next char should be the ;
+		if(tempChar != ';')
+		{
+			cout << "Syntax Error: missing ;" << endl;
 		}
 	}else{
-		// put back string into buffer and call Exp()
-		//TODO put back
-		cout << "going to call Exp()" << endl;
-		//Exp();
+		if(debug2)
+			cout << "going to call Exp()" << endl;
+		string inLine;
+		fin >> inLine;
+		inLine = tempChar + inLine.substr(0,inLine.length()-1);
+		if(debug2)
+			cout << "inLine: " << inLine << endl;
+		ExpStream.clear();
+		ExpStream.str(inLine);
+		cout << Exp();
 	}
 	return;
 }
 
 void assignFunc(string inWord)
 {
-	cout << "assignFucnt(" << inWord << ")" << endl;
+	if(debug2)
+		cout << "assignFucnt(" << inWord << ")" << endl;
+
+	int tempIndex = getSymbolIndex(inWord);
+	if(tempIndex == -1){
+		cout << "Semantic Error: " << inWord << " does not exists." << endl;
+		//return;
+	}
+
+	char tempWord;
+	fin >> tempWord; // get next char ... should be '='
+	if(tempWord != '='){
+		cout << "Syntax Error: missing '='" << endl;
+		//return;
+	}
+	//else it is an expression so evaluate it and assign
 	string tempLine;
 	getline(fin, tempLine);
+	//cout << tempLine << endl;
+	if(tempLine.find(';') == string::npos){
+		cout << "Syntax Error: missing ;" << endl;
+	}
+	//cout << tempLine << " (1)..." << endl;
+	tempLine = tempLine.substr(1,tempLine.length()-2); // remove the space at the front and semilcolon from the end
+	if(debug2)
+		cout << tempLine << endl;
+	ExpStream.clear(); // clear out stream
+	ExpStream.str(tempLine); // set string/line/expression as a stream for Exp() and the other functions to use.
+	symbolTable[tempIndex].value = Exp(); // evalutate expression and store into the variable
+	if(debug2)
+		printSymbolTable();
+	/*
+	char tc;
+	cin >> tc;
+	*/
 }
 
 int Exp()
 {
-	cout << "Exp()" << endl;
+	if(debug1)
+		cout << "Exp()" << endl;
 	return Exp2(Term()); //Exp() calls Exp2() with the value that Term() returns
 }
 
 int Term()
 {
-	cout << "Term()" << endl;
+	if(debug1)
+		cout << "Term()" << endl;
 	return Term2(Fact()); // Term() calls Term2() with the value returned from Fact()
 }
 
@@ -233,20 +284,23 @@ If the next char is a + or - we do the respective operations with the current re
 */
 int Exp2(int inp)
 {
-	cout << "Exp2(" << inp << ")" << endl;
+	if(debug1)
+		cout << "Exp2(" << inp << ")" << endl;
 	int result=inp;
 	char a;
-	if( fin.get(a).eof() == false)
+	if( ExpStream.get(a).eof() == false)
 	{
 		if(a =='+') // if addition
 		{
 			result = Exp2(result + Term()); // return number plus next char
-			cout << "\t" << inp << " + Term() = " << result << endl;
+			if(debug1)
+				cout << "\t" << inp << " + Term() = " << result << endl;
 		}
 		else if (a =='-') // if subtraction
 		{
 			result = Exp2(result - Term()); // return number minus next char
-			cout << "\t" << inp << " - Term() = " << result << endl;
+			if(debug1)
+				cout << "\t" << inp << " - Term() = " << result << endl;
 		}
 	}
 	return result;
@@ -265,29 +319,34 @@ If next char is ) then we also put the char back and return current result
 */
 int Term2(int inp)
 {
-	cout << "Term2(" << inp << ")" << endl;
+	if(debug1)
+		cout << "Term2(" << inp << ")" << endl;
 	int result = inp;
 	char a;
-	if( fin.get(a).eof() == false )
+	if( ExpStream.get(a).eof() == false )
 	{
 		if(a=='*') // if multiplication
 		{
 			result = Term2(result * Fact()); // return result multiplied by next char
-			cout << "\t" << inp << " * Fact() = " << result << endl;
+			if(debug1)
+				cout << "\t" << inp << " * Fact() = " << result << endl;
 
 		}else if(a=='/') // if division
 		{
 			result = Term2(result / Fact()); // return result divided by next char
-			cout << "\t" << inp << " / Fact() = " << result << endl;
+			if(debug1)
+				cout << "\t" << inp << " / Fact() = " << result << endl;
 
 		}else if(a == '+' || a=='-') // if addition or subtraction lower precedence or ')'
 		{
-			fin.putback(a);
-			cout << "\t" << " putback: " << a << endl;
+			ExpStream.putback(a);
+			if(debug1)
+				cout << "\t" << " putback: " << a << endl;
 
 		}else if( a == ')'){ // if close parenthesis put char back on stream and
-			cout << "\t putback: )" << endl;
-			fin.putback(a);
+			if(debug1)
+				cout << "\t putback: )" << endl;
+			ExpStream.putback(a);
 			//result = Exp(); // not sure what to do after you get to the closing parenthesis
 		}
 	}
@@ -298,20 +357,26 @@ int Term2(int inp)
 // if next char is ^ then perform operation using the next Fact()
 int Fact()
 {
-	cout << "Fact() - " << endl;;
+	if(debug1)
+		cout << "Fact() - " << endl;;
 	char a;
 	int result = Num();
-	cout << "  Fact() - " << endl;
-	fin.get(a);
-	cout << "\t got: " << a << endl;
+	if(debug1)
+		cout << "  Fact() - " << endl;
+	ExpStream.get(a);
+	if(debug1)
+		cout << "\t got: " << a << endl;
 
 	if( a == '^'){ // if read in ^ then return the result ^ Fact() ... in case Fact() could be a string of other operations
-		cout << "\t result: " << result << " a: " << a << endl;
+		if(debug1)
+			cout << "\t result: " << result << " a: " << a << endl;
 		return pow(result, Fact());
 	}else{
-		cout << "\t putback: " << a << endl;
-		fin.putback(a);
-		cout << "\t result: " << result << endl; // show current result
+		if(debug1)
+			cout << "\t putback: " << a << endl;
+		ExpStream.putback(a);
+		if(debug1)
+			cout << "\t result: " << result << endl; // show current result
 		//return Fact();
 	}
 	//cout << "\t got:" << a << endl;
@@ -325,14 +390,17 @@ int Fact()
  */
 int Num()
 {
-	cout << "Num() - " << endl;;
+	if(debug1)
+		cout << "Num() - " << endl;;
 	char a;
-	fin.get(a);
+	ExpStream.get(a);
 	if(a == '('){
-		cout << "\t got: (" << endl;
+		if(debug1)
+			cout << "\t got: (" << endl;
 		return Exp(); // call Exp() and return the result of that
 	}else{
-		cout << "\t got: " << a << endl;
+		if(debug1)
+			cout << "\t got: " << a << endl;
 		return atoi(&a);
 	}
 	//cout << "\t got: " << a << endl;
