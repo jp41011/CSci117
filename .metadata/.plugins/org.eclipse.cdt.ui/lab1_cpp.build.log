@@ -1,6 +1,6 @@
-21:59:32 **** Incremental Build of configuration Debug for project lab1_cpp ****
+02:28:45 **** Incremental Build of configuration Debug for project lab1_cpp ****
 make all 
 make: Nothing to be done for `all'.
 
-21:59:33 Build Finished (took 56ms)
+02:28:45 Build Finished (took 58ms)
 

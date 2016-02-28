@@ -122,6 +122,7 @@ int Term2(int inp)
 		{
 			//ungetc(a, stdin); // do what? put char back ... say what?
 			fin.putback(a);
+			cout << "putback(" << a << ")" << endl;
 		}
 	}
 	return result;

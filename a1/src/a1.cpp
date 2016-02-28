@@ -28,10 +28,10 @@ ifstream fin;
 int main(int argc, char* argv[])
 {
 
-	//fin.open("input.txt"); // testing debugging file
+	fin.open("input.txt"); // testing debugging file
 	//fin.open("input1.txt");
 	//fin.open("input2.txt");
-	fin.open("input3.txt");
+	//fin.open("input3.txt");
 
 	cout << "**** Program Start ****" << endl;
 

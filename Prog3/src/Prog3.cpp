@@ -10,7 +10,7 @@
  	 	 	 	 	 Syntax -
  	 	 	 	 	 Semantic -
  	 	 	 Input: a mini-language FresnoSP16 programming (stored in a data file)
- 	 	 	 Output: Printout of execution reseult
+ 	 	 	 Output: Printout of execution result
 ============================================================================
 */
 #include <iostream>
