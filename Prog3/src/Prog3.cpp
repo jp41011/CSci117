@@ -11,6 +11,9 @@
  	 	 	 	 	 Semantic -
  	 	 	 Input: a mini-language FresnoSP16 programming (stored in a data file)
  	 	 	 Output: Printout of execution result
+ 	 	 	 Environment: Ubuntu 64-bit, Eclipse IDE, Core i7 Quadcore
+ 	 	 	 Notes: Checked for at least 2 types of lexical, syntax, semantic errors and displayed error code.
+ 	 	 	 	 Will have to change input program to see all of the errors that are being checked for.
 ============================================================================
 */
 #include <iostream>
@@ -122,7 +125,7 @@ void declaration_list()
 		}else if(tempLine == "double"){
 			declaration("double");
 		}else{
-			//declaration_list(); // TODO Ask TA
+			cout << "Lexical Error: " << tempLine << " type does not exists." << endl;
 		}
 	}
 }
@@ -144,12 +147,22 @@ void declaration(string type)
 			foundSemiColon = false;
 		else if(lastChar == ';')
 			foundSemiColon = true;
+		else{
+			cout << "Syntax Error: missing ;" << endl;
+			break;
+		}
 
 		tempWord = tempWord.substr(0,tempWord.length()-1); // remove the last char
 
 		//else new var to add to symbol table
 		if(debug2)
 			cout << "Creating: " << type << " " << tempWord << endl;
+		int tempIndex = getSymbolIndex(tempWord);
+		if(tempIndex != -1) // variable already exists
+		{
+			cout << "Semantic Error: " << tempWord << " already exists." << endl;
+			break;
+		}
 		symbolNode tempNode;
 		tempNode.type = type;
 		tempNode.symbol = tempWord;

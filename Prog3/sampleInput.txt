@@ -1,9 +1,13 @@
 program
 	int a, b, c;
 	double d;
+	int a;
+	integer e;
+	int b
 	begin
 		b = 3*(5+2);
 		c = (3+4)*5;
+		a 23;
 		print b;
 		print c;
 		print x;
