@@ -4,11 +4,10 @@ Author      : Juan Pedraza
 Version     : v2 - 3/30/16
 Copyright   : Your copyright notice
 Description : CSci 117 - Prog5 assignment
-			Practice for cynamic memmory allocation/deallocation (garbage collection).
+			Practice for dynamic memmory allocation/deallocation (garbage collection).
 			Will use the lazy garbage collection mechanism, mark and sweep phases.
 			Size of the simulated dynamic memory is 10 cells and each cell contains three fields:
 			key, next, mark_bit (init w/ 0)
-
 
 ============================================================================
 */
@@ -51,7 +50,7 @@ void myInsert();  // insert key into a given list
 void myDelete(); // delete key from given list
 void garbage_collect(); // use mark and sweep method to free up memory
 void init_memory(); // initialize memory
-void insertion(int head, int value); // does the actual insertion
+void insertion(int , int); // does the actual insertion
 
 vector<Cell> memory;
 
@@ -163,20 +162,25 @@ void myInsert(){
 	cout << "Enter value (int): ";
 	cin >> userValue;
 
-	if(userList == "1"){ // list1
-		insertion(head1, userValue);
-	}else if(userList == "2"){ // list2
-		insertion(head2, userValue);
+	if(headFree < 10){ // if there is still at least one free cell
+		memory[headFree].setKey(userValue); // user next free cell and set value
+
+	}else{ // no free cells so have to clear memory and then add value
+		//todo
 	}
+
+	headFree++; // move free pointer to next cell
+	if(userList == '1')
+		insertionSort(head1, headFree-1);
+	else
+		insertionSort(head2, headFree-1);
 
 	cout << "==== Insert End ====" << endl;
 	return;
 }
 
 // insertion does the actual insertion give list head pointer and insert value
-void insertion(int head, int value){
+void insertion(int head, int newIndex){
+	if(head == -1) // empty list
 
-	if(head == -1){ // need to get from headFree
-
-	}
 }
