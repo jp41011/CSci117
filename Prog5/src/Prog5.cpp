@@ -1,7 +1,7 @@
 /*============================================================================
 Name        : Prog5.cpp - CSci 117
 Author      : Juan Pedraza
-Version     : v1 - 3/27/16
+Version     : v2 - 3/30/16
 Copyright   : Your copyright notice
 Description : CSci 117 - Prog5 assignment
 			Practice for cynamic memmory allocation/deallocation (garbage collection).
