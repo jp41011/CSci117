@@ -1,13 +1,18 @@
 /*============================================================================
 Name        : Prog5.cpp - CSci 117
 Author      : Juan Pedraza
-Version     : v2 - 3/30/16
+Version     : v3 - 3/31/16
 Copyright   : Your copyright notice
 Description : CSci 117 - Prog5 assignment
 			Practice for dynamic memmory allocation/deallocation (garbage collection).
 			Will use the lazy garbage collection mechanism, mark and sweep phases.
 			Size of the simulated dynamic memory is 10 cells and each cell contains three fields:
 			key, next, mark_bit (init w/ 0)
+			Memory will be represented as a vector of Cell. Where Cell is a custom class that has
+			3 main information:
+				* key: cell value
+				* next: next cell index
+				* mark_bit: whether this cell has been marked by the garbage collection function
 
 ============================================================================
 */
@@ -18,13 +23,15 @@ Description : CSci 117 - Prog5 assignment
 
 using namespace std;
 
+//definition of the Cell class
 class Cell{
 public:
 	int key;
 	int next;
 	bool mark_bit;
 
-	Cell(int newKey = -1, int newNext = -1, bool newMark = false){
+	Cell(int newKey = -1, int newNext = -1, bool newMark = false)
+	{
 		key = newKey;
 		next = newNext;
 		mark_bit = newMark;
@@ -36,7 +43,7 @@ public:
 	bool isMarked(){return mark_bit;}
 
 	// setter functions
-	void setKey(int newKey){key=newKey; mark();}
+	void setKey(int newKey){key=newKey;}
 	void setNext(int newNext){next=newNext;}
 	void mark(){mark_bit=true;}
 	void unMark(){mark_bit=false;}
@@ -53,13 +60,15 @@ void myInsert();  // insert key into a given list
 void insertion(int& , int); // does the actual insertion
 
 void deleteIntro(); // get information to delete
-void myDelete(int, int); // delete key from given list
+void myDelete(int&, int); // delete key from given list
+void addToFreeList(int); // index of cell to be added to the free list
 
-void garbage_collect(); // use mark and sweep method to free up memory
+void garbage_collect(int, int); // use mark and sweep method to free up memory
 
 void printListIntro();
 void printList(int); // iterate and print list values
 
+// global variables
 vector<Cell> memory;
 
 int head1; // head pointer for list 1
@@ -94,12 +103,12 @@ void intro_options(){
 	cout << "Command: ";
 	
 	cin >> input;
-	if(input == "1"){
+	if(input == "1"){ // insert
 		myInsert();
-	}else if(input == "2"){
+	}else if(input == "2"){ // delete
 		deleteIntro();
 	}else if(input == "3"){
-		//garbage_collect();
+		garbage_collect(head1, head2);
 	}else if(input == "4"){ // print memory
 		print_memory();
 	}else if(input == "5"){
@@ -228,13 +237,15 @@ void insertion(int& head, int newIndex){
 // intro to print list function. get list which has to be printed
 void printListIntro()
 {
-	cout << "Enter (1): List1 or (2): List2: ";
+	cout << "Enter (1)-List1 or (2)-List2 or (3)-Free List: ";
 	int list;
 	cin >> list;
 	if(list == 1)
 		printList(head1);
-	else
+	else if(list == 2)
 		printList(head2);
+	else
+		printList(headFree);
 }
 
 // given a head index this will iterate through the list and print out the values
@@ -270,11 +281,88 @@ void deleteIntro()
 }
 
 // do the actual delete here TODO
-void myDelete(int head, int val)
+void myDelete(int& head, int val)
 {
-	if(memory[head].getKey() == val) // remove head
+	/*
+	if(memory[head].getKey() == val) // if head has the value to be removed
+	{
+		head = memory[head].getNext();
+		return;
+	}
+	*/
+
+	int curIndex = head;
+	int prevIndex = 0;
+	bool finishedDelete = false;
+
+	while(finishedDelete == false)
 	{
 		
+		if(memory[curIndex].getKey() == val) // found value to remove
+		{
+			if(curIndex == head) // if this node is the head of the list
+			{
+				head = memory[curIndex].getNext(); // update head of list to new head
+				//addToFreeList(curIndex); // add back to free list more active approach
+				finishedDelete = true;
+				return;
+			}
+			int tempNext = memory[curIndex].getNext();
+			memory[prevIndex].setNext(tempNext);
+			//addToFreeList(curIndex); // add back to free list more active approach
+			finishedDelete = true;
+			return;
+			
+		}else{ // this cell is not a match
+			prevIndex = curIndex;
+			curIndex = memory[curIndex].getNext();
+			if(curIndex == -1)
+			{
+				cout << "Delete: " << val << " NOT found in list" << endl;
+				return;
+			}
+		}
 	}
-	int curIndex = head;
+
+}
+
+// add the given index to the front of the free list
+void addToFreeList(int index)
+{
+	memory[index].setNext(headFree); // update this new free cell to point to the previous free head pointer
+	headFree = index; // update free head pointer
+	return;
+}
+
+/*function to do garbage collection via the 2 phase mark and sweep method
+inputs:
+h1: head1 starting index
+h2: head2 starting index
+*/
+void garbage_collect(int h1, int h2)
+{
+	// first go through list and mark all accessible cells
+	int curIndex = h1;
+	while(curIndex != -1) // mark all those in list 1
+	{
+		memory[curIndex].mark();
+		curIndex = memory[curIndex].getNext();
+	}
+
+	curIndex = h2; // reset starting index
+	while(curIndex != -1)
+	{
+		memory[curIndex].mark();
+		curIndex = memory[curIndex].getNext();
+	}
+
+	for(unsigned int i=0; i < memory.size(); i++)
+	{
+		if(memory[i].isMarked() == false) // not marked therefore needs to be added for free list
+		{
+			addToFreeList(i);
+		}
+	}
+
+	return;
 }
